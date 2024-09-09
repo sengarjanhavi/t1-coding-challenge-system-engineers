@@ -34,11 +34,16 @@ services:
 
   frontend-service:
     container_name: t1-coding-challenge-frontend-service
-    build: ./frontend-service
+ build:
+      context: ./frontend-service
+      target: ${TARGET:-production}
     ports:
       - "3001:3001"
     depends_on:
       - kafka-producer
+          volumes:
+      - ./frontend-service:/app
+      - /app/node_modules
 
   calculation-service:
     container_name: t1-coding-challenge-calculation-service
