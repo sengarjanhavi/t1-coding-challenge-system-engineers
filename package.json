@@ -4,5 +4,6 @@
   "private": true,
   "scripts": {
     "start": "docker-compose up"
+    "dev:windows": "powershell -Command \"$env:TARGET='development'; docker-compose up\""
   }
 }
