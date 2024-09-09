@@ -8,4 +8,4 @@ const server : Application = createApp();
 server.listen(PORT, () => {
     TradeConsumerInstance.start();
     console.log(`Server is running on port ${PORT}`);
-})
+});
